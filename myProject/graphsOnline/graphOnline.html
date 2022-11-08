@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preload" href="https://dl.dropboxusercontent.com/s/w2dty2oxg0xaro2/CrimsonText-SemiBold.woff2?dl=0"
+        as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="icon" href="./src/graph.ico" type="image/x-icon">
+    <link rel="preload" href="https://dl.dropboxusercontent.com/s/ddcgpplsxzdzfwi/Golos-UI_Medium.woff2?dl=0" as="font"
+        type="font/woff2" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Graph</title>
+    <link rel="stylesheet" href="./src/style/style.css">
+</head>
+
+<body>
+    <!-- <header>
+        <div class="header-wrapper">
+            <span style="margin-left: 20px;">Онлайн Граф</span>
+            <span style="margin-right: 20px;">Автор: Зиганшин СтаниSLAVAMARLOW 3221</span>
+        </div>
+    </header> -->
+    <header>
+        <div class="header-wrapper">
+            <div class="logo">
+                <span style="font-size: 25px;">Online Graph</span>
+            </div>
+            <div class="link-others-projects">
+                <ul>
+                    <li><a href="../index.html">Others Projects</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main-wrapper">
+            <div class="left-menu">
+                <div class="div-button">
+                    <button class="left-menu-item item-hover add-vertex" onclick="addVertex()">
+                        <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        Add Vertex
+                    </button>
+                    <button class="left-menu-item item-hover add-edge" onclick="startEdge()">
+                        <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg> Add Edge
+                    </button>
+                    <button class="left-menu-item item-hover add-arc" onclick="startEdgeDirected()">
+                        <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                            <polyline points="13 17 18 12 13 7"></polyline>
+                            <polyline points="6 17 11 12 6 7"></polyline>
+                        </svg>
+                        Add Arc
+                    </button>
+                    <button class="left-menu-item item-hover clear-the-graph" onclick="Delete()">
+                        <?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg width="28" height="28"
+                            viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M60 55.6998H33.76L59.05 30.4098C60.0442 29.4029 60.6017 28.0448 60.6017 26.6298C60.6017 25.2148 60.0442 23.8567 59.05 22.8498L43.44 7.24978C42.4357 6.25075 41.0766 5.68994 39.66 5.68994C38.2434 5.68994 36.8844 6.25075 35.88 7.24978L5.00003 38.1898C4.00099 39.1941 3.44019 40.5532 3.44019 41.9698C3.44019 43.3864 4.00099 44.7454 5.00003 45.7498L18.24 58.9998C18.4284 59.2113 18.6595 59.3804 18.9181 59.4959C19.1766 59.6114 19.4568 59.6707 19.74 59.6698H60C60.4845 59.6101 60.9303 59.3754 61.2537 59.0097C61.5771 58.6441 61.7555 58.1729 61.7555 57.6848C61.7555 57.1967 61.5771 56.7254 61.2537 56.3598C60.9303 55.9942 60.4845 55.7594 60 55.6998ZM38.71 10.0798C38.9645 9.82879 39.3076 9.68807 39.665 9.68807C40.0225 9.68807 40.3655 9.82879 40.62 10.0798L56.22 25.6798C56.4704 25.9326 56.6109 26.274 56.6109 26.6298C56.6109 26.9856 56.4704 27.327 56.22 27.5798L48.78 34.9998L31.28 17.5098L38.71 10.0798Z"
+                                fill="black" />
+                        </svg>
+                        Clear The Graph
+                    </button>
+                </div>
+                <div class="div">
+                    <div class="left-menu-item info-vertex">
+                        <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                            <circle cx="12" cy="12" r="10"></circle>
+                        </svg>
+                        <span>Quantity Vertexs: </span>
+                        <span id="amountVertex"></span>
+                    </div>
+                    <div class="left-menu-item info-edge">
+                        <svg viewBox="795 315 140 140" width="28" height="28" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 820 430L 910 340" stroke="#000" stroke-width="6"></path>
+                            <circle cx="910" cy="340" r="10" fill="#000" stroke="#000" />
+                            <circle cx="820" cy="430" r="10" fill="#000" stroke="#000" />
+                        </svg>
+                        <span>Quantity Edges: </span>
+                        <span id="amountEdge"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas-div">
+                <canvas id="canvas" style="background-color: white" width="1660px" height="920px"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <!-- The functionality of adding edges -->
+    <script src="./src/script/addEdge.js"></script>
+
+    <!-- The functionality of adding edges directed -->
+    <script src="./src/script/addEdgeDirected.js"></script>
+
+    <!-- The functionality of adding a vertex -->
+    <script src="./src/script/addVertex.js"></script>
+
+    <!-- The functionality of adding drawing shapes -->
+    <script src="./src/script/drawElement.js"></script>
+
+    <!-- The functionality of moving shapes -->
+    <script src="./src/script/moveFigure.js"></script>
+
+    <!-- Adding variables -->
+    <script src="./src/script/variable.js"></script>
+    <script>
+
+        function Delete() {
+            arrVertexs = [];
+            arrEdges = [];
+            arrEdgesDirected = [];
+            draw();
+        }
+        
+
+        function inCircle(x, radius) {
+            return radius * radius - x * x;
+        }
+
+    </script>
+</body>
+
+</html>

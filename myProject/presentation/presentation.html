@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./src/presentation.ico" type="image/x-icon">
+    <title>Presentation</title>
+    <link rel="stylesheet" href="./src/style/Author.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-wrapper">
+            <div class="logo">
+                <span style="font-size: 35px;">ZGNSH</span>
+            </div>
+            <div class="link-others-projects">
+                <ul>
+                    <li><a href="../index.html">Others Projects</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main-wrapper">
+            <div class="about-author">
+                <div class="text-author">
+                    <span style="font-size: 35px;">On this slider you can see my developments in action.</span>
+                    <!-- <p style="margin-bottom: 30px; margin-top: 15px;">&nbsp&nbsp&nbsp&nbspI am the developer of this website. This site presents projects that allow you to solve problems of various kinds. 
+                        You can find out about me and my works in the slider below.</p> -->
+                </div>
+                <div class="in-swiper">
+                    <div class="swiper">
+                        <div class="swiper mySwiper">
+                            <div style="color: black" class="swiper-wrapper">
+                                <div class="swiper-slide"><video src="./src/video/textToSpeech.mp4" id="videoTextToSpeech"
+                                        controls width="100%" height="100%" poster="./src/img/poster1-light.png"></video></div>
+                                <div class="swiper-slide"><video src="./src/video/onlineGraph.mp4" id="videoOnlineGraph" 
+                                    controls width="100%" height="100%" poster="./src/img/poster2-light.png"></video></div>
+                                    <div class="swiper-slide"><video src="./src/video/onlineWordCounter.mp4" id="videoOnlineWordCounter" 
+                                        controls width="100%" height="100%" poster="./src/img/poster3-light.png"></video></div>
+                                <div class="swiper-slide">Slide 4</div>
+                                <div class="swiper-slide">Slide 5</div>
+                                <div class="swiper-slide">Slide 6</div>
+                                <div class="swiper-slide">Slide 7</div>
+                                <div class="swiper-slide">Slide 8</div>
+                                <div class="swiper-slide">Slide 9</div>
+                            </div>
+                            <div class="swiper-button-next" onclick="nextVideo()"></div>
+                            <div class="swiper-button-prev" onclick="prevVideo()"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="./src/script/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        cssMode: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        mousewheel: true,
+        keyboard: true,
+    });
+</script>
+
+</html>

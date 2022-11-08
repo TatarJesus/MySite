@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preload" href="https://dl.dropboxusercontent.com/s/g6pg7ih10eiebfi/Anodina-Bold.woff2?dl=0" as="font"
+        type="font/woff2" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <link rel="icon" href="./src/speaker.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text To Speech</title>
+    <link rel="stylesheet" href="./src/style/textToSpeech.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-wrapper">
+            <div class="logo">
+                <span>Text To Speech</span>
+            </div>
+            <div class="link-others-projects">
+                <ul>
+                    <li><a href="../index.html">Others Projects</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main-wrapper">
+            <div class="settings">
+                <div class="settings-wrapper">
+                    <button class="button-top but-texts" id="texts">Ready Texts</button>
+                    <button class="button-top but-set" id="setting">Settings</button>
+                </div>
+            </div>
+            <div class="text-block">
+                <div class="text-block-wrapper">
+                    <textarea name="" style="color: #FFF" id="text"
+                        placeholder="Please enter the text here..."></textarea>
+                </div>
+            </div>
+            <div class="play-to-speech">
+                <div class="play-to-speech-wrapper">
+                    <button class="button-bottom but-clear" id="clear">CLEAR</button>
+                    <button class="button-bottom but-play" id="speak">PLAY</button>
+                    <button class="button-bottom but-stop" id="stop" disabled>STOP</button>
+                    <button class="button-bottom but-pause" id="pause" disabled>PAUSE</button>
+                </div>
+            </div>
+        </div>
+        <div class="block-set">
+            <div class="close-but">
+                <span style="padding-left: 10px; font-size: 30px;">Settings</span>
+                <button id="close">
+                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="block-set-wrapper">
+                <div class="div-voice">
+                    <label for="voice">Voice:</label>
+                    <select id="voice"></select>
+                </div>
+                <div class="div-pitch">
+                    <label for="pitch">Pitch:</label>
+                    <input id="pitch" type="range" min="0.1" max="2" step="0.1" value="1">
+                    <output for="pitch">1</output>
+                </div>
+                <div class="div-rate">
+                    <label for="rate">Rate:</label>
+                    <input id="rate" type="range" min="0.1" max="2" step="0.1" value="1">
+                    <output for="rate">1</output>
+                </div>
+                <div class="div-volume">
+                    <label for="volume">Volume:</label>
+                    <input id="volume" type="range" min="0" max="1" step="0.1" value="1">
+                    <output for="volume">1</output>
+                </div>
+            </div>
+        </div>
+        <div class="block-choose-text">
+            <div class="close-but">
+                <span style="padding-left: 10px; font-size: 30px;">Ready Texts</span>
+                <button id="close1">
+                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="div-texts">
+                <button onclick="chooseText(1)">My favourite book</button>
+                <button onclick="chooseText(2)">My everyday meals</button>
+                <button onclick="chooseText(3)">Learning foreign languages</button>
+                <button onclick="chooseText(4)">My favourite TV programme</button>
+            </div>
+        </div>
+    </main>
+    <script src="./src/script/script.js"></script>
+</body>
+
+</html>
